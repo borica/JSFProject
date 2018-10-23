@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/WEB-INF/templates/default.xhtml">
+
+	<ui:define name="content">
+		<h:form acceptcharset="ISO-8859-1" lang="pt_BR">
+			<h3>#{appMessages['sidebar.userRegistration']}</h3>
+			<div class="container">
+				<div class="row mt-4">
+					<div class="col-md-4">
+						<div class="form-group">
+							<p:outputLabel for="name" value="Name:"/> 
+							<h:inputText value= "${userRegistrationController.userRegistration.name}" id="name" styleClass="form-control" pt:placeholder="John Snow" />
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<p:outputLabel for="email" value="Email:"/> 
+							<h:inputText value="${userRegistrationController.userRegistration.email}" id="email" styleClass="form-control" pt:placeholder="john.snow@westeros.com" />
+						</div>
+					</div>
+					<div class="col-md-3">
+						<p:outputLabel for="gender" value="Gênero:"/>
+						<div class="form-group">
+							<h:selectOneMenu value="#{userRegistrationController.userRegistration.gender}" id="gender" styleClass="form-control">
+								<f:selectItem itemLabel="Selecionar" itemValue="" />
+								<f:selectItems value="#{ userRegistrationController.genders }" var="genders" itemLabel="#{ genders.descricao }" itemValue="#{ genders }"/>
+							</h:selectOneMenu>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+								<p:outputLabel for="phoneNumber" value="Número de Telefone:"/>
+								<h:inputText value="#{userRegistrationController.userRegistration.phoneNumber}" id="phoneNumber" styleClass="form-control" pt:placeholder="e.g. 11-4258-5325" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<h:commandButton action="#{userRegistrationController.testarMember()}" value="Testar" styleClass="btn btn-secondary" />
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
