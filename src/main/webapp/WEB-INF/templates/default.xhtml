@@ -23,8 +23,9 @@
     <title>Java EE - Example</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link type="text/css" rel="stylesheet" href="#{request.contextPath}/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/css/screen.css" />
+    <link type="text/css" rel="stylesheet" href="#{request.contextPath}/assets/ionicons/css/ionicons.min.css" />
     <script type="text/javascript" src="#{request.contextPath}/js/bootstrap.min.js"></script>
-<!--     <h:outputStylesheet name="css/screen.css" /> -->
 </h:head>
 <h:body>
 	<div id="navigation">
@@ -32,7 +33,7 @@
 	</div>
     <div id="container-fluid">
     	<div class="row">
-	    	<div id="sidemenu" class="col-md-3">
+	    	<div id="sidemenu" class="col-md-3 sidebar-container">
 		        <ui:include src="/components/sidemenu.xhtml"/>
 	        </div>
 	        <div id="content" class="col-md-9">        	 
@@ -41,11 +42,11 @@
 		         </ui:insert>
 	        </div>
     	</div>        
-<!--         <div id="footer"> -->
-<!--             <p> -->
-<!--                 Project Footer -->
-<!--             </p> -->
-<!--         </div> -->
+        <div id="footer">
+            <p>
+                Project Footer
+            </p>
+        </div>
     </div>
 </h:body>
 </html>

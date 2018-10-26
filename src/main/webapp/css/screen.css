@@ -1,0 +1,24 @@
+bg-green {
+	background-color: #e1f9f7;
+}
+
+.sidebar-container {
+	margin: 0px;
+	padding: 0px;
+}
+
+.sidebar-list {
+    padding: 0 5px 0 20px;
+}
+
+.sidebar-list:first-child {
+	border-top: 0px !important;
+}
+
+/*
+.sidebar-list li {
+	background-color: #e1f9f7;
+    color: rgb(25, 148, 138);
+    border-top: 0px;
+    border-bottom: 1px solid rgba(25, 148, 138, 0.349);
+}*/

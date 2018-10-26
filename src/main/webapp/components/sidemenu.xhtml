@@ -20,19 +20,20 @@
     xmlns:f="http://java.sun.com/jsf/core"
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:p="http://primefaces.org/ui">
-    
 	<h:form>
-		<div style="background-color: #0c2461;">
-			<ul class="list-group-flush ">
-				<li class="list-group-item">
-					<p:commandLink styleClass="" ajax="false" action="#{ userRegistrationController.startActivity }">
-						<i class="fa fa-circle-o"></i> <span>#{appMessages['sidebar.userRegistration']}</span>
-					</p:commandLink>
-				</li>
-				<li class="list-group-item">Second Link</li>
-				<li class="list-group-item">Third Link</li>
-			</ul>
-		
-		</div>
+		<ul class="list-group-flush sidebar-list">
+			<li class="list-group-item">
+				<h:commandLink styleClass="" ajax="false" action="#{ userRegistrationController.startActivity }">
+					<table>
+						<tr>
+							<td class="align-middle"><i class="ion-android-contact" style="font-size: 24px;"></i></td>
+							<td class="align-middle"><span class="ml-2">#{appMessages['sidebar.userRegistration']}</span></td>
+						</tr>
+					</table>
+				</h:commandLink>
+			</li>
+			<li class="list-group-item">Second Link</li>
+			<li class="list-group-item">Third Link</li>
+		</ul>
 	</h:form>
 </ui:component>
